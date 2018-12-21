@@ -19,6 +19,8 @@
   "homepage": "https://github.com/laithmohammedsaker/Book-store-Client#readme",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "components": "^0.1.0",
+    "node-vibrant": "^3.0.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "styled-components": "^4.1.3"

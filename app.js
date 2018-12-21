@@ -2,6 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import 'babel-polyfill';
 
+import Header from './components/header'
+import Slidebar from './components/slidebar'
+
 class App extends React.Component{
     constructor(){
         super();
@@ -11,7 +14,11 @@ class App extends React.Component{
     }
     render(){
         return(
-            <h1>Hello World !!!</h1>
+            <React.Fragment>
+                <Header />
+                <Slidebar />
+            </React.Fragment>
+
         )
     }
 }
