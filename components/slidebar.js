@@ -34,7 +34,6 @@ class Slidebar extends React.Component{
         let len = data.length;
         data.map((IMG,i)=>{
             let x = Imgcolor.from(IMG).getPalette().then(rslt=>{
-                console.log(rslt)
                 color.push(rslt.DarkVibrant._rgb)
                 // color.push(rslt.Vibrant._rgb)
                 if(i == len-1){ this.setState({color : color}) }
@@ -48,7 +47,6 @@ class Slidebar extends React.Component{
                 {this.state.data.map((book,i)=>{
                     let color = this.state.color[i];
                     if( color == undefined ){ color = [115,135,151]; }
-                    console.log(color);
                     return (
                         <BookCard key={i}>
                             <Img src={book} alt="book"/>
