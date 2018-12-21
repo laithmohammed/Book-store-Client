@@ -4,7 +4,7 @@
   "description": "Central Library of Baghdad",
   "main": "app.js",
   "scripts": {
-    "test": "parcel app.js"
+    "test": "parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -18,11 +18,13 @@
   },
   "homepage": "https://github.com/laithmohammedsaker/Book-store-Client#readme",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "styled-components": "^4.1.3"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1"
   }
