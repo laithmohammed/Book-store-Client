@@ -21,56 +21,38 @@ class FeedList extends React.Component{
     constructor(){
         super();
         this.state ={
-            
+            data : [require(`../assets/book/book1.png`),require(`../assets/book/book3.png`),require(`../assets/book/book5.png`),require(`../assets/book/book2.png`),require(`../assets/book/book4.png`),require(`../assets/book/book5.png`),require(`../assets/book/book4.png`),require(`../assets/book/book3.png`),require(`../assets/book/book2.png`),require(`../assets/book/book1.png`),require(`../assets/book/book5.png`)]
         }
     }
     render(){
         return(
             <Feed>
-                <Card>
-                    <BookPic src={require('../assets/book/book2.png')} alt="book" />
-                    <Data>
-                        <Name>BIG MAGIC : Creative Liv ...</Name>
-                        <Auther>by Elizabeth Giibret</Auther>
-                        <VoteContainer>
-                            <StarIcon src={require('../assets/icon/staryellow.png')} alt="star yellow"/>
-                            <StarIcon src={require('../assets/icon/staryellow.png')} alt="star yellow"/>
-                            <StarIcon src={require('../assets/icon/starsilver.png')} alt="star silver"/>
-                            <StarIcon src={require('../assets/icon/starsilver.png')} alt="star silver"/>
-                            <StarIcon src={require('../assets/icon/starsilver.png')} alt="star silver"/>
-                            <VoterNum>654 voters</VoterNum>
-                        </VoteContainer>
-                        <Description>There are a number of features that make RandomText a little different from other Lorem Ipsum dummy text generators ...</Description>
-                    </Data>
-                    <LikerCon>
-                        <LikerPic src={require('../assets/icon/profile.png')} alt="profile pic"/>
-                        <LikerPic src={require('../assets/icon/profile.png')} alt="profile pic"/>
-                        <LikerPic src={require('../assets/icon/profile.png')} alt="profile pic"/>
-                        <LikeSpan><b>Samintha Willion</b> and <b>2 others</b> like this</LikeSpan>
-                    </LikerCon>
-                </Card>
-                <Card>
-                    <BookPic src={require('../assets/book/book2.png')} alt="book" />
-                    <Data>
-                        <Name>BIG MAGIC : Creative Liv ...</Name>
-                        <Auther>by Elizabeth Giibret</Auther>
-                        <VoteContainer>
-                            <StarIcon src={require('../assets/icon/staryellow.png')} alt="star yellow"/>
-                            <StarIcon src={require('../assets/icon/staryellow.png')} alt="star yellow"/>
-                            <StarIcon src={require('../assets/icon/starsilver.png')} alt="star silver"/>
-                            <StarIcon src={require('../assets/icon/starsilver.png')} alt="star silver"/>
-                            <StarIcon src={require('../assets/icon/starsilver.png')} alt="star silver"/>
-                            <VoterNum>654 voters</VoterNum>
-                        </VoteContainer>
-                        <Description>There are a number of features that make RandomText a little different from other Lorem Ipsum dummy text generators ...</Description>
-                    </Data>
-                    <LikerCon>
-                        <LikerPic src={require('../assets/icon/profile.png')} alt="profile pic"/>
-                        <LikerPic src={require('../assets/icon/profile.png')} alt="profile pic"/>
-                        <LikerPic src={require('../assets/icon/profile.png')} alt="profile pic"/>
-                        <LikeSpan><b>Samintha Willion</b> and <b>2 others</b> like this</LikeSpan>
-                    </LikerCon>
-                </Card>
+                {this.state.data.map((Img,i)=>{
+                    return(
+                        <Card key={i}>
+                            <BookPic src={Img} alt="book" />
+                            <Data>
+                                <Name>BIG MAGIC : Creative Liv ...</Name>
+                                <Auther>by Elizabeth Giibret</Auther>
+                                <VoteContainer>
+                                    <StarIcon src={require('../assets/icon/staryellow.png')} alt="star yellow"/>
+                                    <StarIcon src={require('../assets/icon/staryellow.png')} alt="star yellow"/>
+                                    <StarIcon src={require('../assets/icon/starsilver.png')} alt="star silver"/>
+                                    <StarIcon src={require('../assets/icon/starsilver.png')} alt="star silver"/>
+                                    <StarIcon src={require('../assets/icon/starsilver.png')} alt="star silver"/>
+                                    <VoterNum>654 voters</VoterNum>
+                                </VoteContainer>
+                                <Description>There are a number of features that make RandomText a little different from other Lorem Ipsum dummy text generators ...</Description>
+                            </Data>
+                            <LikerCon>
+                                <LikerPic src={require('../assets/icon/profile.png')} alt="profile pic"/>
+                                <LikerPic src={require('../assets/icon/profile.png')} alt="profile pic"/>
+                                <LikerPic src={require('../assets/icon/profile.png')} alt="profile pic"/>
+                                <LikeSpan><b>Samintha Willion</b> and <b>2 others</b> like this</LikeSpan>
+                            </LikerCon>
+                        </Card>
+                    )
+                })}
             </Feed>
         )
     }

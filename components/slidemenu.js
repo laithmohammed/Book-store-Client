@@ -19,7 +19,7 @@ class SlideMenu extends React.Component{
         let SlideMenu = document.getElementById('SlideMenu');
         let MenuButton = document.getElementById('MenuButton');
         if(title == 0){ SlideMenu.style.left = "0em";SlideMenu.style.boxShadow = '0px 0px 20px rgba(0, 0, 0, 0.5)';MenuButton.title = "1"; }
-        if(title == 1){ SlideMenu.style.left = "-4.1em";MenuButton.title = "0"; }
+        if(title == 1){ SlideMenu.style.left = "-4.1em";SlideMenu.style.boxShadow = 'unset';MenuButton.title = "0"; }
     }
     render(){
         return(

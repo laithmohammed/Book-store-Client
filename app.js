@@ -6,6 +6,7 @@ import Header from './components/header'
 import Slidebar from './components/slidebar'
 import SlideMenu from './components/slidemenu'
 import Feed from './components/feed'
+import Login from './components/login'
 
 class App extends React.Component{
     constructor(){
@@ -21,6 +22,7 @@ class App extends React.Component{
                 <Slidebar />
                 <SlideMenu />
                 <Feed />
+                <Login />
             </React.Fragment>
 
         )
