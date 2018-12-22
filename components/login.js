@@ -2,9 +2,9 @@ import React from 'react';
 import Styled from 'styled-components';
 import 'babel-polyfill';
 
-let LoginForm   = Styled.div `position:fixed;width:auto;max-width:30em;height:100%;background-color:white;top:0px;right:0px;bottom:0px;z-index:10;display:none;box-shadow:0px 0px 30px rgba(0, 0, 0, 0.5)`;
+let Form   = Styled.div `position:fixed;width:auto;max-width:30em;height:100%;background-color:white;top:0px;right:0px;bottom:0px;z-index:10;display:inline;box-shadow:0px 0px 30px rgba(0, 0, 0, 0.5);overflow:scroll;`;
 let CloseButton = Styled.span `color:#738797;font-weight:bolder;margin:0.8em;font-size:1.4em;font-family: 'Noto Sans', sans-serif;cursor:pointer;`;
-let Container   = Styled.div `padding:0px 13.5%;margin-top:4em;`
+let Container   = Styled.div `padding:0px 13.5%;margin-top:4em;height:150%;`
 let LogoCon     = Styled.div `width:100%;text-align:center;padding-bottom:3em`
 let Logo        = Styled.img `width:70%;`
 let Border      = Styled.div `border:1.5px solid #a2a2a2;height:25px;border-radius:10px;display:flex;align-items:center;padding:0.5em;padding-right:1px;margin-bottom:2em`
@@ -22,17 +22,16 @@ let RegistTxt   = Styled.div `font-size:20px;color:#606560`
 let RegistWrd   = Styled.span `font-weight:bolder;cursor:pointer;padding-left:8px;color:#3496d7`
 
 class Login extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state ={
             
         }
     }
-    closingLoginForm(e){ document.getElementById('LoginForm').style.display="none" }
     render(){
         return(
-            <LoginForm id="LoginForm">
-                <CloseButton onClick={e=>this.closingLoginForm(e)} >x</CloseButton>
+            <Form>
+                <CloseButton onClick={(event)=>{this.props.hideLoginForm()}} >x</CloseButton>
                 <Container>
                     <LogoCon>
                         <Logo src={require('../assets/icon/logo.png')} alt="store logo"/>
@@ -46,13 +45,13 @@ class Login extends React.Component{
                         <Input type="password" placeholder="Password"/>
                     </Border>
                     <LoginBCon>
-                        <ButtonLogin defaultValue='LOGIN' />
+                        <ButtonLogin defaultValue='LOGIN' type="submit"/>
                     </LoginBCon>
                     <RegistCon>
-                        <RegistTxt>You don't have account? <RegistWrd>Register</RegistWrd></RegistTxt>
+                        <RegistTxt>You don't have account? <RegistWrd onClick={(event)=>{this.props.registerForm()}}>Register</RegistWrd></RegistTxt>
                     </RegistCon>
                 </Container>
-            </LoginForm>
+            </Form>
         )
     }
 }
