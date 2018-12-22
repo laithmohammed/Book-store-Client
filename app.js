@@ -4,6 +4,7 @@ import 'babel-polyfill';
 
 import Header from './components/header'
 import Slidebar from './components/slidebar'
+import SlideMenu from './components/slidemenu'
 
 class App extends React.Component{
     constructor(){
@@ -17,6 +18,7 @@ class App extends React.Component{
             <React.Fragment>
                 <Header />
                 <Slidebar />
+                <SlideMenu />
             </React.Fragment>
 
         )
